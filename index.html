@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ShaddockNH3的手写数字识别</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #f0f0f0;
+            /* 禁止手机双击缩放 */
+            touch-action: manipulation;
+        }
+        h1 {
+            color: #333;
+            font-size: 1.5em;
+        }
+        #canvas-container {
+            display: inline-block;
+            border: 3px solid #333;
+            /* 让边框紧贴canvas */
+            line-height: 0;
+        }
+        #canvas {
+            cursor: crosshair;
+        }
+        #result {
+            font-size: 2.5em;
+            margin-top: 20px;
+            color: #ff69b4;
+            font-weight: bold;
+            min-height: 1.2em; /* 防止文字跳动 */
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>✍️ 请在网格中写一个数字 ✍️</h1>
+    <div id="canvas-container">
+        <canvas id="canvas" width="280" height="280"></canvas>
+    </div>
+    <div>
+        <button id="clearBtn">清除画板</button>
+    </div>
+    <div id="result">AI正在思考中...</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
